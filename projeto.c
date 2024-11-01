@@ -42,6 +42,23 @@ buscarPratoPorCodigo(int codigoPrato, int codigoRestaurante, Prato pratos[], int
 main(): Chama as funções na ordem correta para o fluxo do programa (cadastro, login, exibição do menu, e exibição dos pratos e detalhes).
 */
 
+//criar struct para cada restaurante, com código e nome
+#define NUM_RESTAURANTES 3
+#define NUM_PRATOS 12
+
+
+typedef struct{
+    int codigo;
+    char nome[50];
+}Restaurante;
+
+typedef struct{
+    int codigoPrato;
+    int codigoRest;
+    char descricao[50];
+    float preco;
+}Comidas;
+
 
 //função para cabeçalho
 void mostrarCabecalho() {
@@ -50,19 +67,58 @@ void mostrarCabecalho() {
     printf("**************************************************\n");
 }
 
-//criar struct para cada restaurante, com código e nome
-typedef struct{
-    int codigo;
-    char nome[50];
-}restaurantes;
 
-typedef struct{
-    int codigoPrato;
-    int codigoRest;
-    char descricao[50];
-    float preco;
-}comidas;
+
+
+
+//função adicionar restaurante
+void add_restaurantes_e_pratos(Restaurante restaurantes[], Comidas pratos[], int numeroRestaurantes, int numeroPratos){
+    for(int i = 0; i < numeroRestaurantes; i++){
+        printf("Cadastre o codigo e nome do restaurante %d:\n", i + 1);
+        scanf("%d %49s", &restaurantes[i].codigo, restaurantes[i].nome); // é bomcolocar %49s para não ocorrer o buferr overlow 
+
+
+    for(int j = 0; j<numeroPratos; j++){
+        printf("Cadastre codigo do prato, codigo do restaurante, descricao e preco dos pratos do restaurante %s:\n", restaurantes[i].nome);
+        scanf("%d %d %49s %f", &pratos[j].codigoPrato, &pratos[j].codigoRest, pratos[j].descricao, &pratos[j].preco);
+        }
+    }
+}
+
+
+
 
 int main(){
+
+    Restaurante restaurantes[NUM_RESTAURANTES];
+    Comidas pratos[NUM_PRATOS];
+
     mostrarCabecalho();
+    add_restaurantes_e_pratos(restaurantes, pratos, NUM_RESTAURANTES, NUM_PRATOS);
+     
+     
+    //laço para cadastrar cada restaurante
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
