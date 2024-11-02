@@ -7,7 +7,10 @@
 
 
 
-/*1. Funções de Exibição e Interface
+/*1. 
+Todas as funções que serão necessárias para o trabalho:
+
+Funções de Exibição e Interface
 mostrarCabecalho(): Exibe o cabeçalho do programa.
 mostrarMenuPrincipal(): Exibe o menu principal após o login com opções para o restaurante, como "Mostrar pratos" e "Logout".
 mostrarMenuLogin(): Exibe a tela de login, onde o usuário insere o código do restaurante.
